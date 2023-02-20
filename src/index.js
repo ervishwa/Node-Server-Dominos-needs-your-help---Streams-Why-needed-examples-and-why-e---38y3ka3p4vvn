@@ -5,15 +5,17 @@ const httpServer = http.createServer(handleServer);
 
 function handleServer(req, res) {
     if (req.url == '/welcome') {
-           res.end("Welcome to Dominos!");
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end("Welcome to Dominos!");
 }else if(req.url == '/contact'){
+    res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify({ 
         phone: '18602100000', 
         email: 'guestcaredominos@jublfood.com' 
       }));  
     res.end(); 
 }else{
-    res.end("status 404");
+    res.end("404");
 }
 }
 
