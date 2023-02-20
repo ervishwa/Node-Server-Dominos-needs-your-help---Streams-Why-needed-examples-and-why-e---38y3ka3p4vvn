@@ -1,3 +1,4 @@
+const { NOTFOUND } = require("dns");
 var http = require("http");
 
 const httpServer = http.createServer(handleServer);
@@ -15,7 +16,8 @@ function handleServer(req, res) {
       }));  
     res.end(); 
 }else{
-    res.end("404");
+    res.WriteHead(404);
+    res.end();
 }
 }
 
