@@ -17,8 +17,8 @@ function handleServer(req, res) {
     res.end(); 
 }else{
     // res.WriteHead(404);
-    res.write("404 Not found");
-    res.end();
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end("404 Not found");
 
 }
 }
