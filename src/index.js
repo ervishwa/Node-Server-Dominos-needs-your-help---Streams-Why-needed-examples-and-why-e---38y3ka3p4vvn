@@ -5,7 +5,7 @@ const httpServer = http.createServer(handleServer);
 
 function handleServer(req, res) {
     if (req.url == '/welcome') {
-           res.write("Welcome to Dominos!");
+           res.end("Welcome to Dominos!");
 }else if(req.url == '/contact'){
     res.write(JSON.stringify({ 
         phone: '18602100000', 
